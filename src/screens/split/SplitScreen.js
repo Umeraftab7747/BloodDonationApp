@@ -1,3 +1,4 @@
+/* eslint-disable handle-callback-err */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/self-closing-comp */
 import React, {Component} from 'react';
@@ -16,23 +17,30 @@ import {
 import AsyncStorage from '@react-native-community/async-storage';
 
 export class SplitScreen extends Component {
-  //   componentDidMount = () => {
-  //     setTimeout(() => {
-  //       this.retrieveUser();
-  //     }, 3000);
-  //   };
+  componentDidMount = () => {
+    setTimeout(() => {
+      this.retrieveUser();
+    }, 3000);
+  };
 
-  //   retrieveUser = () => {
-  //     AsyncStorage.getItem('userData', (error, data) => {
-  //       const userData = JSON.parse(data);
+  retrieveUser = () => {
+    AsyncStorage.getItem('save', (err, data) => {
+      const User = JSON.parse(data);
+      if (User === null) {
+        this.props.navigation.replace('OnboardingScreen');
+      } else {
+        AsyncStorage.getItem('userdata', (error, data) => {
+          const userData = JSON.parse(data);
 
-  //       if (userData !== null) {
-  //         this.props.navigation.replace('Signup');
-  //       } else {
-  //         this.props.navigation.replace('WelcomeScreen');
-  //       }
-  //     });
-  //   };
+          if (userData !== null) {
+            this.props.navigation.replace('Signup');
+          } else {
+            this.props.navigation.replace('WelcomeScreen');
+          }
+        });
+      }
+    });
+  };
 
   render() {
     return (

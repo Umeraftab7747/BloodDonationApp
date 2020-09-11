@@ -1,3 +1,4 @@
+/* eslint-disable handle-callback-err */
 import React, {Component} from 'react';
 import {
   StyleSheet,
@@ -13,8 +14,39 @@ import {
 } from 'react-native-responsive-screen';
 import {KeyboardAwareScrollView} from '@codler/react-native-keyboard-aware-scroll-view';
 import {AppButton, NavHeader, AppTextinput} from '../../components';
+import AsyncStorage from '@react-native-community/async-storage';
 
 export class Signin extends Component {
+  state = {email: '', password: ''};
+
+  validata = () => {
+    const {email, password} = this.state;
+    if (email !== '') {
+      if (password !== '') {
+        AsyncStorage.getItem('userdata', (err, data) => {
+          const Userdata = JSON.parse(data);
+          if (Userdata !== null) {
+            if (email === Userdata.email) {
+              if (password === Userdata.password) {
+                console.warn('LOGED IN');
+              } else {
+                alert('Password is wrong');
+              }
+            } else {
+              alert('Invalid email');
+            }
+          } else {
+            console.warn('no data');
+          }
+        });
+      } else {
+        alert('Password is Required');
+      }
+    } else {
+      alert('Email is Required');
+    }
+  };
+
   render() {
     return (
       <View style={styles.Container}>
@@ -25,19 +57,30 @@ export class Signin extends Component {
         <KeyboardAwareScrollView>
           {/* top */}
           <View style={styles.bgContainer}>
-            <AppTextinput name={'Email'} />
-            <AppTextinput name={'Password'} password={true} />
+            <AppTextinput
+              name={'Email'}
+              onChangeText={(email) => this.setState({email})}
+            />
+            <AppTextinput
+              name={'Password'}
+              password={true}
+              onChangeText={(password) => this.setState({password})}
+            />
             <TouchableOpacity style={styles.ftxtContainer}>
               <Text style={styles.ftxt}>Forgot Password ?</Text>
             </TouchableOpacity>
-            <AppButton title={'Signin'} />
+            <AppButton title={'Signin'} onPress={() => this.validata()} />
           </View>
           {/* bottom */}
           <View style={styles.bottomContainer}>
             <View style={styles.BtoomContainer}>
               <Text style={styles.atxt}>Dont have a Account ! </Text>
             </View>
-            <TouchableOpacity style={styles.SContainer}>
+            <TouchableOpacity
+              onPress={() => {
+                this.props.navigation.navigate('Signup');
+              }}
+              style={styles.SContainer}>
               <Text style={styles.stxt}>SignUp</Text>
             </TouchableOpacity>
           </View>

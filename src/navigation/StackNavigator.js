@@ -9,6 +9,7 @@ import {WelcomeScreen} from '../screens/welcome';
 import {Signin} from '../screens/signin';
 import {Signup} from '../screens/signup';
 import {SplitScreen} from '../screens/split';
+import {OnboardingScreen} from '../screens/onboarding';
 
 export class StackNavigator extends Component {
   render() {
@@ -16,8 +17,13 @@ export class StackNavigator extends Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="Signup"
-            component={Signup}
+            name="SplitScreen"
+            component={SplitScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="OnboardingScreen"
+            component={OnboardingScreen}
             options={{headerShown: false}}
           />
           <Stack.Screen
@@ -25,15 +31,15 @@ export class StackNavigator extends Component {
             component={WelcomeScreen}
             options={{headerShown: false}}
           />
+
           <Stack.Screen
             name="Signin"
             component={Signin}
             options={{headerShown: false}}
           />
-
           <Stack.Screen
-            name="SplitScreen"
-            component={SplitScreen}
+            name="Signup"
+            component={Signup}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

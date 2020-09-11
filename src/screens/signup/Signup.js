@@ -1,3 +1,4 @@
+/* eslint-disable handle-callback-err */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-sparse-arrays */
 import React, {Component} from 'react';
@@ -17,6 +18,7 @@ import {
 import {KeyboardAwareScrollView} from '@codler/react-native-keyboard-aware-scroll-view';
 import {AppButton, NavHeader, AppTextinput} from '../../components';
 var validator = require('email-validator');
+import AsyncStorage from '@react-native-community/async-storage';
 
 export class Signup extends Component {
   state = {
@@ -49,25 +51,22 @@ export class Signup extends Component {
                 if (password === confirmpassword) {
                   if (gender !== '') {
                     if (blood !== '') {
-                      const parms = {
-                        name,
-                        email,
-                        phone,
-                        password,
-                        confirmpassword,
-                        gender,
-                        blood,
+                      const value = {
+                        name: this.state.name,
+                        email: this.state.email,
+                        phone: this.state.phone,
+                        password: this.state.password,
+                        confirmpassword: this.state.confirmpassword,
+                        gender: this.state.gender,
+                        blood: this.state.blood,
                       };
-                      console.warn(parms);
-                      // addonsas
-                      // d
-                      // asd
-                      // a
-                      // sd
-                      // a
-                      // sd
-                      // as
-                      // d
+                      AsyncStorage.setItem(
+                        'userdata',
+                        JSON.stringify(value),
+                        () => {
+                          this.props.navigation.navigate('Signin');
+                        },
+                      );
                     } else {
                       alert('Blood Type is Required');
                     }
