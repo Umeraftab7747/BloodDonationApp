@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   imgContiner: {
-    backgroundColor: 'red',
+    // backgroundColor: 'red',
     width: w('100%'),
     height: h('50%'),
   },

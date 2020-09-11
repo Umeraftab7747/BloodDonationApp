@@ -33,7 +33,7 @@ export class SplitScreen extends Component {
           const userData = JSON.parse(data);
 
           if (userData !== null) {
-            this.props.navigation.replace('Signup');
+            this.props.navigation.replace('Dashboard');
           } else {
             this.props.navigation.replace('WelcomeScreen');
           }

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 const Stack = createStackNavigator();
@@ -10,6 +9,7 @@ import {Signin} from '../screens/signin';
 import {Signup} from '../screens/signup';
 import {SplitScreen} from '../screens/split';
 import {OnboardingScreen} from '../screens/onboarding';
+import {Dashboard} from '../screens/dasboard';
 
 export class StackNavigator extends Component {
   render() {
@@ -40,6 +40,11 @@ export class StackNavigator extends Component {
           <Stack.Screen
             name="Signup"
             component={Signup}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Dashboard"
+            component={Dashboard}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

@@ -28,7 +28,7 @@ export class Signin extends Component {
           if (Userdata !== null) {
             if (email === Userdata.email) {
               if (password === Userdata.password) {
-                console.warn('LOGED IN');
+                this.props.navigation.replace('Dashboard');
               } else {
                 alert('Password is wrong');
               }
