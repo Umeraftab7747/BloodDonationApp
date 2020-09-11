@@ -16,8 +16,13 @@ export class StackNavigator extends Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="WelcomeScreen"
-            component={WelcomeScreen}
+            name="SplitScreen"
+            component={SplitScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Signup"
+            component={Signup}
             options={{headerShown: false}}
           />
           <Stack.Screen
@@ -25,15 +30,9 @@ export class StackNavigator extends Component {
             component={Signin}
             options={{headerShown: false}}
           />
-
           <Stack.Screen
-            name="Signup"
-            component={Signup}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="SplitScreen"
-            component={SplitScreen}
+            name="WelcomeScreen"
+            component={WelcomeScreen}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

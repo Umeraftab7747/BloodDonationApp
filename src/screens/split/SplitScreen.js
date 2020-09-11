@@ -48,7 +48,11 @@ export class SplitScreen extends Component {
             <Text style={styles.txt}>Blood Bank</Text>
           </View>
           <View style={styles.loading}>
-            <ActivityIndicator size="large" color="#ea5455" />
+            <ActivityIndicator
+              style={{marginRight: h('3%')}}
+              size="large"
+              color="#ea5455"
+            />
           </View>
         </ImageBackground>
       </View>

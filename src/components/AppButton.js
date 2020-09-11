@@ -30,7 +30,7 @@ export class AppButton extends Component {
 const styles = StyleSheet.create({
   btnContainer: {
     backgroundColor: 'tomato',
-    height: h(this.props.hight),
+    height: h('6%'),
     width: '50%',
     borderRadius: h('7%'),
     overflow: 'hidden',
