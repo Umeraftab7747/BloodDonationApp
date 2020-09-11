@@ -19,6 +19,7 @@ export class AppTextinput extends Component {
     return (
       <View style={styles.Container}>
         <TextInput
+          {...this.props}
           placeholder={this.props.name}
           style={styles.textInput}
           secureTextEntry={this.props.password}

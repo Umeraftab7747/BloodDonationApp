@@ -16,9 +16,87 @@ import {
 } from 'react-native-responsive-screen';
 import {KeyboardAwareScrollView} from '@codler/react-native-keyboard-aware-scroll-view';
 import {AppButton, NavHeader, AppTextinput} from '../../components';
+var validator = require('email-validator');
 
 export class Signup extends Component {
-  state = {gender: '', blood: ''};
+  state = {
+    name: '',
+    email: '',
+    phone: '',
+    password: '',
+    confirmpassword: '',
+    gender: '',
+    blood: '',
+  };
+
+  validate = () => {
+    const {
+      name,
+      email,
+      phone,
+      password,
+      confirmpassword,
+      gender,
+      blood,
+    } = this.state;
+    const check = validator.validate(this.state.email);
+    if (check === true) {
+      if (password !== '') {
+        if (password.length > 8) {
+          if (name !== '') {
+            if (phone !== '') {
+              if (confirmpassword !== '') {
+                if (password === confirmpassword) {
+                  if (gender !== '') {
+                    if (blood !== '') {
+                      const parms = {
+                        name,
+                        email,
+                        phone,
+                        password,
+                        confirmpassword,
+                        gender,
+                        blood,
+                      };
+                      console.warn(parms);
+                      // addonsas
+                      // d
+                      // asd
+                      // a
+                      // sd
+                      // a
+                      // sd
+                      // as
+                      // d
+                    } else {
+                      alert('Blood Type is Required');
+                    }
+                  } else {
+                    alert('Gender is Required');
+                  }
+                } else {
+                  alert('Password and Cofirm password is not same');
+                }
+              } else {
+                alert('Confirm password is Required');
+              }
+            } else {
+              alert('Phone No is Required');
+            }
+          } else {
+            alert('Name is Required');
+          }
+        } else {
+          alert('Password should be of 8 Characters');
+        }
+      } else {
+        alert('password is Required');
+      }
+    } else {
+      console.warn(email);
+    }
+  };
+
   render() {
     return (
       <View style={styles.Container}>
@@ -32,18 +110,38 @@ export class Signup extends Component {
             <Text style={styles.gtxt}>Details</Text>
 
             <View style={styles.txtinputContainer}>
-              <AppTextinput name={'Name'} />
-              <AppTextinput name={'Email'} />
-              <AppTextinput name={'Phone'} />
-              <AppTextinput name={'Password'} />
-              <AppTextinput name={'Confirm Password'} />
+              <AppTextinput
+                name={'Name'}
+                onChangeText={(name) => this.setState({name})}
+              />
+              <AppTextinput
+                name={'Email'}
+                onChangeText={(email) => this.setState({email})}
+              />
+              <AppTextinput
+                name={'Phone'}
+                onChangeText={(phone) => this.setState({phone})}
+              />
+              <AppTextinput
+                name={'Password'}
+                onChangeText={(password) => this.setState({password})}
+              />
+              <AppTextinput
+                name={'Confirm Password'}
+                onChangeText={(confirmpassword) =>
+                  this.setState({confirmpassword})
+                }
+              />
             </View>
           </View>
           <View style={styles.midContainer}>
             <Text style={styles.gtxt}>Gender</Text>
             <View style={styles.imgContainer}>
               <TouchableOpacity
-                onPress={() => this.setState({gender: 'male'})}
+                onPress={() => {
+                  const g = 'male';
+                  this.setState({gender: g});
+                }}
                 style={styles.img}>
                 {this.state.gender === 'male' ? (
                   <Image
@@ -283,7 +381,7 @@ export class Signup extends Component {
             {/* end */}
           </View>
           <View style={styles.btnview}>
-            <AppButton title={'Signup'} height={'5%'} />
+            <AppButton title={'Signup'} onPress={() => this.validate()} />
 
             <View style={{flexDirection: 'row', marginTop: h('2%')}}>
               <View

@@ -30,7 +30,7 @@ export class Signin extends Component {
             <TouchableOpacity style={styles.ftxtContainer}>
               <Text style={styles.ftxt}>Forgot Password ?</Text>
             </TouchableOpacity>
-            <AppButton title={'Signin'} height={'5%'} />
+            <AppButton title={'Signin'} />
           </View>
           {/* bottom */}
           <View style={styles.bottomContainer}>
