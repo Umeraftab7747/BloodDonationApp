@@ -29,17 +29,8 @@ export class Dashboard extends Component {
         source={require('../../assets/dash.png')}>
         {/* top */}
         <View style={styles.logo}>
-          <View
-            style={{
-              backgroundColor: 'white',
-              width: '100%',
-              height: h('6%'),
-              alignItems: 'center',
-              borderBottomLeftRadius: h('1%'),
-              borderBottomRightRadius: h('1%'),
-            }}>
-            <Text style={styles.btxt}>BLOOD BANK</Text>
-          </View>
+          <Text style={styles.btxt}>BLOOD BANK</Text>
+
           <ProfilePic
             onPress={() => {
               console.warn('IMAGE UPLOADED');
@@ -151,7 +142,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   btxt: {
-    color: '#ea5455',
+    color: '#fff',
     fontSize: h('3%'),
     fontWeight: 'bold',
     marginTop: h('1%'),

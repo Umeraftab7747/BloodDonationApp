@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 const Tab = createMaterialBottomTabNavigator();
 import {Icon} from 'react-native-elements';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 // screen
 import {Dashboard} from '../screens/dasboard';
@@ -22,7 +23,7 @@ export class BottomTab extends Component {
           options={{
             tabBarLabel: 'Dashboard',
             tabBarIcon: ({color}) => (
-              <Icon name="home" color={color} size={26} />
+              <AntDesign name="user" color={color} size={26} />
             ),
           }}
         />
@@ -33,7 +34,7 @@ export class BottomTab extends Component {
           options={{
             tabBarLabel: 'Signup',
             tabBarIcon: ({color}) => (
-              <Icon name="home" color={color} size={26} />
+              <AntDesign name="setting" color={color} size={26} />
             ),
           }}
         />
