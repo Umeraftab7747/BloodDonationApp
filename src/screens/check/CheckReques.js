@@ -61,7 +61,7 @@ export class CheckReques extends Component {
           contentContainerStyle={{marginTop: -h('1%')}}
           data={this.state.data}
           renderItem={({item}) => this.RenderItem(item)}
-          animationType={AnimationType.Dive}
+          animationType={AnimationType.SlideFromBottom}
           keyExtractor={(item) => item.name}
           animationDuration={1000}
           focused={true}

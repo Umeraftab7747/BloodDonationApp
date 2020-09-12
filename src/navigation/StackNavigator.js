@@ -12,6 +12,7 @@ import {OnboardingScreen} from '../screens/onboarding';
 import {Dashboard} from '../screens/dasboard';
 import {Donarscreen} from '../screens/donar';
 import {CheckReques} from '../screens/check';
+import {AddRequest} from '../screens/addrequest';
 
 // navigators
 import {BottomTab} from './BottomTab';
@@ -64,6 +65,11 @@ export class StackNavigator extends Component {
           <Stack.Screen
             name="CheckReques"
             component={CheckReques}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="AddRequest"
+            component={AddRequest}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

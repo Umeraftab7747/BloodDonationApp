@@ -94,7 +94,11 @@ export class MyRequest extends Component {
               <Text style={styles.Requst}>No of Request</Text>
             </View>
             <View style={styles.right}>
-              <TouchableOpacity style={styles.btn}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.props.navigation.navigate('AddRequest');
+                }}
+                style={styles.btn}>
                 <AntDesign name="pluscircleo" color={'#ea5455'} size={20} />
                 <Text style={styles.btntxt}>Add Request</Text>
               </TouchableOpacity>
