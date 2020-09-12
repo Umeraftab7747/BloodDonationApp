@@ -14,7 +14,7 @@ import {
   heightPercentageToDP as h,
 } from 'react-native-responsive-screen';
 import {KeyboardAwareScrollView} from '@codler/react-native-keyboard-aware-scroll-view';
-import {AppButton, NavHeader, AppTextinput} from '../../components';
+import {AppButton, NavHeader, AppTextinput, ProfilePic} from '../../components';
 import AsyncStorage from '@react-native-community/async-storage';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {AnimatedFlatList, AnimationType} from 'flatlist-intro-animations';
