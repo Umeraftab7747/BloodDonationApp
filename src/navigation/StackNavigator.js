@@ -21,11 +21,6 @@ export class StackNavigator extends Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="Donarscreen"
-            component={Donarscreen}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
             name="SplitScreen"
             component={SplitScreen}
             options={{headerShown: false}}
@@ -40,7 +35,6 @@ export class StackNavigator extends Component {
             component={WelcomeScreen}
             options={{headerShown: false}}
           />
-
           <Stack.Screen
             name="Signin"
             component={Signin}
@@ -59,6 +53,11 @@ export class StackNavigator extends Component {
           <Stack.Screen
             name="BottomTab"
             component={BottomTab}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Donarscreen"
+            component={Donarscreen}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

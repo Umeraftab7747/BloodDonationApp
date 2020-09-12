@@ -83,7 +83,10 @@ export class Donarscreen extends Component {
     return (
       <ScrollView>
         <View style={styles.Container}>
-          <NavHeader title={'Donar List'} />
+          <NavHeader
+            title={'Donar List'}
+            onPress={() => this.props.navigation.goBack()}
+          />
           <View style={styles.flatlistContainerView}>
             <AnimatedFlatList
               contentContainerStyle={{

@@ -49,7 +49,11 @@ export class Dashboard extends Component {
               <Text style={styles.donartxt}>Donar's</Text>
             </View>
             <View style={styles.rightContianer}>
-              <TouchableOpacity style={styles.btn}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.props.navigation.navigate('Donarscreen');
+                }}
+                style={styles.btn}>
                 <Text style={styles.btntxt}>Find Donar</Text>
               </TouchableOpacity>
             </View>
