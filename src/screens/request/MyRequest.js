@@ -104,7 +104,7 @@ export class MyRequest extends Component {
         </ImageBackground>
         <View style={styles.flatlistContainerView}>
           <AnimatedFlatList
-            contentContainerStyle={{marginTop: -h('1%')}}
+            contentContainerStyle={{marginTop: -h('2%')}}
             data={this.state.data}
             renderItem={({item}) => this.RenderItem(item)}
             animationType={AnimationType.Dive}
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
   },
   flatlistContainer: {
     alignItems: 'center',
-    marginTop: h('2%'),
+    marginTop: h('4%'),
   },
   flatlistContainerView: {
     backgroundColor: '#E6DDDD',
