@@ -11,6 +11,9 @@ import {SplitScreen} from '../screens/split';
 import {OnboardingScreen} from '../screens/onboarding';
 import {Dashboard} from '../screens/dasboard';
 
+// navigators
+import {BottomTab} from './BottomTab';
+
 export class StackNavigator extends Component {
   render() {
     return (
@@ -45,6 +48,11 @@ export class StackNavigator extends Component {
           <Stack.Screen
             name="Dashboard"
             component={Dashboard}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="BottomTab"
+            component={BottomTab}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

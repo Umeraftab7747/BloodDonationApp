@@ -45,7 +45,7 @@ export class WelcomeScreen extends Component {
             onPress={() => this.props.navigation.navigate('Signin')}
           />
           <AppButton
-            title={'Signin'}
+            title={'Signup'}
             height={'5%'}
             onPress={() => this.props.navigation.navigate('Signup')}
           />
