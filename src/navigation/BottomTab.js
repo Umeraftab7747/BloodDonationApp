@@ -6,6 +6,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 // screen
 import {Dashboard} from '../screens/dasboard';
 import {MyRequest} from '../screens/request';
+import {ProfileScreen} from '../screens/profile';
 
 export class BottomTab extends Component {
   render() {
@@ -21,7 +22,7 @@ export class BottomTab extends Component {
           options={{
             tabBarLabel: 'Dashboard',
             tabBarIcon: ({color}) => (
-              <AntDesign name="user" color={color} size={26} />
+              <AntDesign name="appstore1" color={color} size={26} />
             ),
           }}
         />
@@ -33,6 +34,16 @@ export class BottomTab extends Component {
             tabBarLabel: 'My Request',
             tabBarIcon: ({color}) => (
               <AntDesign name="staro" color={color} size={26} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="ProfileScreen"
+          component={ProfileScreen}
+          options={{
+            tabBarLabel: 'Account',
+            tabBarIcon: ({color}) => (
+              <AntDesign name="user" color={color} size={26} />
             ),
           }}
         />
