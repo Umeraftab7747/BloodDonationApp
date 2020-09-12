@@ -16,6 +16,7 @@ import {
 import {KeyboardAwareScrollView} from '@codler/react-native-keyboard-aware-scroll-view';
 import {AppButton, NavHeader, AppTextinput} from '../../components';
 import AsyncStorage from '@react-native-community/async-storage';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 export class MyRequest extends Component {
   render() {
@@ -32,7 +33,8 @@ export class MyRequest extends Component {
             </View>
             <View style={styles.right}>
               <TouchableOpacity style={styles.btn}>
-                <Text style={styles.btntxt}>Make new Request</Text>
+                <AntDesign name="pluscircleo" color={'#ea5455'} size={20} />
+                <Text style={styles.btntxt}>Add Request</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -85,11 +87,13 @@ const styles = StyleSheet.create({
     borderRadius: h('10%'),
     justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'row',
   },
   btntxt: {
     color: '#ea5455',
     fontWeight: 'bold',
     fontSize: h('2%'),
+    marginLeft: h('1%'),
   },
   no: {
     color: 'white',
