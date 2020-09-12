@@ -65,15 +65,12 @@ export class Donarscreen extends Component {
         </View>
         <View style={styles.RightContainer}>
           <Text style={styles.nametxt}>NAME</Text>
-          <Text style={styles.addresstxt}>Address</Text>
+
           <View style={styles.noConatiner}>
-            <Text style={styles.notxt}>03040506753</Text>
+            <Text style={styles.notxt}>Ask for Help?</Text>
           </View>
         </View>
         <View style={styles.LastContainer}>
-          <View style={styles.requestContainr}>
-            <Text style={styles.requestTxt}>Requested</Text>
-          </View>
           <View style={styles.circlebLood}>
             <Text style={styles.circelTxt}>A+</Text>
           </View>
@@ -154,7 +151,7 @@ const styles = StyleSheet.create({
   nametxt: {
     color: 'black',
     fontSize: h('2%'),
-    marginTop: h('3%'),
+    marginTop: h('7%'),
   },
   addresstxt: {
     color: 'silver',
@@ -171,6 +168,7 @@ const styles = StyleSheet.create({
     marginTop: h('3%'),
     borderColor: '#ea5455',
     borderWidth: 1,
+    marginLeft: h('4%'),
   },
   requestContainr: {
     backgroundColor: '#FF215D',
@@ -189,7 +187,7 @@ const styles = StyleSheet.create({
     height: '42%',
     borderRadius: h('10%'),
     // backgroundColor: 'red',
-    marginTop: h('2%'),
+    marginTop: h('5%'),
     marginRight: h('3%'),
     borderColor: 'silver',
     borderWidth: 1,
