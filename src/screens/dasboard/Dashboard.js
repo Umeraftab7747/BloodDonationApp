@@ -6,20 +6,14 @@ import {
   StyleSheet,
   View,
   Text,
-  Image,
   ImageBackground,
   TouchableOpacity,
-  ScrollView,
 } from 'react-native';
 import {
   widthPercentageToDP as w,
   heightPercentageToDP as h,
 } from 'react-native-responsive-screen';
-import {KeyboardAwareScrollView} from '@codler/react-native-keyboard-aware-scroll-view';
-import {AppButton, NavHeader, AppTextinput, ProfilePic} from '../../components';
-
-import AsyncStorage from '@react-native-community/async-storage';
-import {Icon} from 'react-native-elements';
+import {ProfilePic} from '../../components';
 
 export class Dashboard extends Component {
   render() {
@@ -64,7 +58,11 @@ export class Dashboard extends Component {
               <Text style={styles.donartxt}>Request's</Text>
             </View>
             <View style={styles.rightContianer}>
-              <TouchableOpacity style={styles.btn}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.props.navigation.navigate('CheckReques');
+                }}
+                style={styles.btn}>
                 <Text style={styles.btntxt}>See Request</Text>
               </TouchableOpacity>
             </View>
@@ -133,6 +131,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: h('7%'),
+    elevation: 4,
   },
   btntxt: {
     color: '#ea5455',

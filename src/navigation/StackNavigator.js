@@ -11,6 +11,7 @@ import {SplitScreen} from '../screens/split';
 import {OnboardingScreen} from '../screens/onboarding';
 import {Dashboard} from '../screens/dasboard';
 import {Donarscreen} from '../screens/donar';
+import {CheckReques} from '../screens/check';
 
 // navigators
 import {BottomTab} from './BottomTab';
@@ -58,6 +59,11 @@ export class StackNavigator extends Component {
           <Stack.Screen
             name="Donarscreen"
             component={Donarscreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="CheckReques"
+            component={CheckReques}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

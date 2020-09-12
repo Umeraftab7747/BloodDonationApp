@@ -165,6 +165,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
+    elevation: h('1%'),
   },
   btntxt: {
     color: '#ea5455',
