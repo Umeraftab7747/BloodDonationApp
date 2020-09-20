@@ -92,7 +92,7 @@ export class Signup extends Component {
         alert('password is Required');
       }
     } else {
-      console.warn(email);
+      alert("email is incorect")
     }
   };
 
